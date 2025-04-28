@@ -61,10 +61,14 @@ WHERE
 SELECT 
     pr.nome, 
     SUM(ip.quantidade * pr.preco) AS Total_Vendido
-FROM produtos pr
-JOIN itens_pedido ip ON pr.id = ip.produto_id
-GROUP BY pr.nome
-ORDER BY Total_Vendido DESC;
+FROM
+    produtos pr
+JOIN
+    itens_pedido ip ON pr.id = ip.produto_id
+GROUP BY
+    pr.nome
+ORDER BY
+    Total_Vendido DESC;
 
 
 -- Questão 7: Valor médio dos pedidos (com duas casas e R$)
